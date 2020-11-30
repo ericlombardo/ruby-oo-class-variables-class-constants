@@ -1,9 +1,12 @@
 class Shoe
-  attr_accessor :color, :size, :material, :condition
-  attr_reader :brand
+  attr_accessor :color, :size, :material, :condition  # set & get @variables
+  attr_reader :brand  # get @variables
 
-  def initialize(brand)
-    @brand = brand
+  BRANDS = [] # class CONSTANT for brands
+
+  def initialize(brand) # upon object creation
+    @brand = brand  # make brand @variable
+    BRANDS << brand if !BRANDS.include?(brand)  # push into BRANDS constant if unique
   end
 
   def cobble
